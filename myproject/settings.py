@@ -28,7 +28,8 @@ MESSAGE_LEVEL = messages_constants.DEBUG
 
 # SECURITY WARNING: keep the secret key used in production secret!
 from . import my_settings
-SECRET_KEY = my_settings.SECRET_KEY
+# SECRET_KEY = my_settings.SECRET_KEY
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure--5=juvr0&wqjww27i=2gcjp@p*v!72k-664no5p06aep!30$-2')
 DATABASES = my_settings.DATABASES
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', False))
